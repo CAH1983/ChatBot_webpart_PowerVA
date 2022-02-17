@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot Power VA</title>
+
+    <style>
+        div.chat-bot-wrapper {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            border: 0;
+            width: 400px;
+        }
+
+        #bot-btn {
+            float: right;
+            height: 38px;
+            width: auto;
+        }
+
+        #iFrameBot {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="chat-bot-wrapper">
+
+        <button id="bot-btn" onclick="showBot()"> Talk to the bot </button>
+
+        <div id='iFrameBot'>
+            <iframe
+                src="https://web.powerva.microsoft.com/environments/Default-0e79f3f3-4eeb-48ed-815e-2876c379e863/bots/new_bot_60a376f1f8394cb3a3953250c0307ecf/webchat"
+                frameborder="1" style="width: 100%; height: 500px;"></iframe>
+
+        </div>
+
+    </div>
+
+
+    <!-- Javascript -->
+    <script>
+        const botBtn = document.getElementById('bot-btn');
+        const iframeBot = document.getElementById('iFrameBot');
+
+        function showBot() {
+
+            if (iframeBot.style.display == "block") {
+                iframeBot.style.display = "none";
+                botBtn.innerHTML = "Talk to the bot";
+            } else {
+                iframeBot.style.display = "block";
+                botBtn.innerHTML = "X";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
